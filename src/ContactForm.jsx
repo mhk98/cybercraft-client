@@ -5,18 +5,21 @@ import logo from "../src/assets/Asset 1 1.png"
 import { useCreateContactMutation } from "./features/contact/contact";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import SEO from "./Seo";
+import SEO from "./SEO";
+
+
+
 const ContactForm = () => {
 
   const [createContact] = useCreateContactMutation()
 
-
-  const { register, formState: { errors }, handleSubmit } = useForm();
+  const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const onSubmit = async(data) => {
     const res = await createContact(data)
 
     if(res){
-      toast('Successfully sent your information')
+      toast.success('Successfully sent your information')
+      reset()
     }
   }
 
