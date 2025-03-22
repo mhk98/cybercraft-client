@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const contactApi = createApi({
   reducerPath: "contactApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000/api/v1/",
+    baseUrl: "https://cybercraft-backend-7r0v.onrender.com/api/v1/",
   }),
 
   endpoints: (build) => ({
